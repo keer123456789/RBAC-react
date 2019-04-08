@@ -18,7 +18,9 @@ export default class Header extends PureComponent {
     };
   }
   close = () => {
-    cookie.save('status', 0);
+    cookie.remove('userid');
+    cookie.remove('address');
+    cookie.remove('password');
     window.location.reload();
   }
   render() {

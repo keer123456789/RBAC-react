@@ -7,9 +7,10 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 import IceIcon from '@icedesign/icon';
-import cookie from 'react-cookies';
 import './UserLogin.scss';
 import Operations from '../../../../api/api';
+import { Link } from 'react-router-dom';
+import cookie from 'react-cookies';
 
 const { login } = Operations;
 const { Row, Col } = Grid;
@@ -46,7 +47,11 @@ export default class UserLogin extends Component {
         const result = await login(value);
         console.log(result);
         if (result.message === 'success') {
-          window.location.href = `${window.location.origin}/#/`;
+          cookie.save("userid",value.account);
+          cookie.save("address",value.address);
+          cookie.save("password",value.password);
+          window.location.href = `${window.location.origin}/#/manager/power`;
+          // return(<div><Link to="/manager/power" /></div>)
         }
       }
     });
@@ -88,7 +93,7 @@ export default class UserLogin extends Component {
         />
         <div style={styles.contentWrapper} className="content-wrapper">
           <h2 style={styles.slogan} className="slogan">
-            欢迎使用 <br /> ICE 内容管理系统
+            欢迎使用 <br /> 权限管理系统
           </h2>
           <div style={styles.formContainer}>
             <h4 style={styles.formTitle}>登录</h4>

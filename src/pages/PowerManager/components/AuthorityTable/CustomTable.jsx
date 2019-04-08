@@ -10,6 +10,7 @@ import {
 } from '@icedesign/form-binder';
 import Row from 'react-bootstrap/es/Row';
 import Col from 'react-bootstrap/es/Col';
+import cookie from 'react-cookies';
 
 
 const { getPower, addPower,deletePower,fixPower } = Operation;
@@ -30,6 +31,14 @@ export default class Home extends Component {
   }
 
   componentWillMount = async () => {
+    // const userid=cookie.load("userid");
+    // const password=cookie.load("password");
+    // const address=cookie.load("address");
+    // if(userid!=null&&password!=null&&address!=null){
+      
+    // }else{
+    //   window.location.href =`${window.location.origin}/#/login`;
+    // }
     const result = await getPower();
     const athis = this;
     if (result != null) {

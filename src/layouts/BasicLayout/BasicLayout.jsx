@@ -48,7 +48,7 @@ export default class BasicLayout extends Component {
       history,
     } = this.props;
     if (pathname === '/') {
-      history.push('/manager/power');
+      history.push('/login');
     }
   };
 

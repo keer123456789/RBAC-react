@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AuthorityTable from './components/AuthorityTable';
-
+import cookie from 'react-cookies';
 
 export default class DisplayBoar extends Component {
   static displayName = 'DisplayBoar';
@@ -16,7 +16,7 @@ export default class DisplayBoar extends Component {
     if(userid!=null&&password!=null&&address!=null){
       
     }else{
-      window.location.href =  `${window.location.origin}/#/login`;
+      window.location.href =`${window.location.origin}/#/login`;
     }
   }
   render() {

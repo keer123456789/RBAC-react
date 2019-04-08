@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AuthorityTable from './components/AuthorityTable';
-
+import cookie from 'react-cookies';
 
 export default class DisplayBoar extends Component {
   static displayName = 'DisplayBoar';
