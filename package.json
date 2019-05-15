@@ -50,7 +50,7 @@
     "ice-scripts": "^1.7.1"
   },
   "scripts": {
-    "start": "ice dev",
+    "start": "ice dev --port=4444",
     "build": "ice build",
     "lint": "eslint . --ext '.js,.jsx' --fix"
   },

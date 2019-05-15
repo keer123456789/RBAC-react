@@ -79,6 +79,7 @@ export default class CreateActivityForm extends Component {
   };
 
 
+  
   render() {
     return (
       <div className="create-activity-form">

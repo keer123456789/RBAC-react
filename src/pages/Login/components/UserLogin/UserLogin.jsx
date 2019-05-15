@@ -15,7 +15,7 @@ import cookie from 'react-cookies';
 const { login } = Operations;
 const { Row, Col } = Grid;
 // 寻找背景图片可以从 https://unsplash.com/ 寻找
-const backgroundImage = require('./images/pig.jpg');
+const backgroundImage = require('./images/RBAC.png');
 
 export default class UserLogin extends Component {
   static displayName = 'UserLogin';

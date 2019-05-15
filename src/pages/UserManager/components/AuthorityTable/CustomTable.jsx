@@ -55,7 +55,6 @@ change = (value)=> {
     const status = this.state.dataSource[index].status.toString();
     const roleName = this.state.dataSource[index].roleName.toString();
     this.setState({
-      
       userId: id,
       email: email,
       userFName: fName,
