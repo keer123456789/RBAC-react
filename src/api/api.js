@@ -1,16 +1,17 @@
 import { get, post } from './request.js';
 
+const ip="http://127.0.0.1:8080";
 
 // 增加权限
 const addPower = (value) => {
-  return post('http://127.0.0.1:8080/addPower', {
+  return post(`${ip}/addPower`, {
     data: value,
   });
 };
 
 // 获得权限
 const getPower = () => {
-  return get('http://127.0.0.1:8080/getPower')
+  return get(`${ip}/getPower`)
     .then((resp) => {
       return resp.data;
     });
@@ -20,7 +21,7 @@ const getPower = () => {
  * @param value
  */
 const fixPower = (value) => {
-  return post('http://127.0.0.1:8080/fixPower', {
+  return post(`${ip}/fixPower`, {
     data: value,
   });
 };
@@ -30,7 +31,7 @@ const fixPower = (value) => {
  * @returns {Promise<T | never>}
  */
 const deletePower = (id) => {
-  return get(`http://127.0.0.1:8080/deletePower/${id}`)
+  return get(`${ip}/deletePower/${id}`)
     .then((resp) => {
       return resp.data;
     });
@@ -40,7 +41,7 @@ const deletePower = (id) => {
  * @returns {Promise<T | never>}
  */
 const getAllPowerId = () => {
-  return get('http://127.0.0.1:8080/getAllPowerId')
+  return get(`${ip}/getAllPowerId`)
     .then((resp) => {
       return resp.data;
     });
@@ -51,7 +52,7 @@ const getAllPowerId = () => {
  * @param value
  */
 const addRole = (value) => {
-  return post('http://127.0.0.1:8080/addRole', {
+  return post(`${ip}/addRole`, {
     data: value,
   });
 };
@@ -60,14 +61,14 @@ const addRole = (value) => {
  * @returns {Promise<T | never>}
  */
 const getAllRole = () => {
-  return get('http://127.0.0.1:8080/getAllRole')
+  return get(`${ip}/getAllRole`)
     .then((resp) => {
       return resp.data;
     });
 };
 
 const changeRolePowerAndFName = (value) => {
-  return post('http://127.0.0.1:8080/changeRolePowerAndFName', {
+  return post(`${ip}/changeRolePowerAndFName`, {
     data: value,
   });
 };
@@ -76,7 +77,7 @@ const changeRolePowerAndFName = (value) => {
  * 获得系统内的全部用户
  */
 const getAllUser=()=>{
-  return get('http://127.0.0.1:8080/getAllUser').then((resp)=>{
+  return get(`${ip}/getAllUser`).then((resp)=>{
     return resp.data;
   });
 }
@@ -86,7 +87,7 @@ const getAllUser=()=>{
  * 用户提交审核
  */
 const register = (value) => {
-  return post('http://127.0.0.1:8080/register', {
+  return post(`${ip}/register`, {
     data: value,
   });
 };
@@ -95,7 +96,7 @@ const register = (value) => {
  * @param {} value 
  */
 const eroll =(value)=>{
-  return post('http://127.0.0.1:8080/eroll',{
+  return post(`${ip}/eroll`,{
     data:value,
   })
 }
@@ -104,7 +105,7 @@ const eroll =(value)=>{
  * @param {*} address 
  */
 const banUser =(address)=>{
-  return get(`http://127.0.0.1:8080/banUser/${address}`)
+  return get(`${ip}/banUser/${address}`)
 }
 
 /**
@@ -113,7 +114,7 @@ const banUser =(address)=>{
  */
 const login = (value) => {
   // cookie.save('account', value.account);
-  return post('http://127.0.0.1:8080/login', {
+  return post(`${ip}/login`, {
     data: value,
   });
 };
